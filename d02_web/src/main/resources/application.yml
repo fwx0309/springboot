@@ -1,0 +1,25 @@
+spring:
+  mvc:
+    # 开启restful风格
+    hiddenmethod:
+      filter:
+        enabled: true
+    # 静态资源访问路径，默认为/**。因为以后要配拦截器、过滤器，建议修改。
+    # 会导致欢迎页和网站小图标favicon.ico失效
+    static-path-pattern: /resources/**
+    # 开启内容协商，默认为false。用于配置请求参数，如：url?format=json
+    contentnegotiation:
+      favor-parameter: false
+      # parameter-name: format
+  # 静态资源访问路径
+  web:
+    resources:
+      # 这是默认配置静态资源路径，可以自定义修改
+      static-locations: classpath:/static/,classpath:/public/,classpath:/META-INF/resources/,classpath:/resources/
+      # 是否启用静态资源映射，默认为true
+      add-mappings: true
+
+  # 自定义banner
+  banner:
+    image:
+      location: classpath:/resources/banner2.jpg

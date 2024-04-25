@@ -18,3 +18,5 @@
     2)自定义内容协商策略。用于ParameterContentNegotiation、HeaderContentNegotiation中的自定义扩展功能。    org.fwx.config.WebConfig->WebMvcConfigurer->configureContentNegotiation
 
     测试controller：org.fwx.controller.ResponseController.getPerson
+8、Thymeleaf
+    org.fwx.controller.ThymeleafController.success

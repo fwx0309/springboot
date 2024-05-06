@@ -1,0 +1,65 @@
+spring:
+  servlet:
+    # 文件上传大小设置
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test_jdbc?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+
+    druid:
+      aop-patterns: org.fwx.*   #springbean监控
+      filters: stat,wall,slf4j  #所有开启的功能
+
+      stat-view-servlet:        #监控页配置
+        enabled: true
+        login-username: admin
+        login-password: admin
+        reset-enable: false
+
+      web-stat-filter:          #web监控
+        enabled: true
+        url-pattern: /*
+        exclusions: '/*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+
+      filter:
+        stat:
+          slow-sql-millis: 1000
+          log-slow-sql: true
+          enabled: true
+
+        wall:
+          enabled: true
+          config:
+            drop-table-allow: false
+  redis:
+    host: 192.168.2.100
+    port: 6379
+    password: 123456
+    timeout: 3000ms
+    database: 0
+    pool:
+      max-active: 8
+      max-idle: 8
+      min-idle: 0
+
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true                      # 开启驼峰命名法
+  #config-location: classpath:mybatis/mybatis-config.xml     # mybatis配置文件，和configuration不能同时使用
+  mapper-locations: classpath:mapper/*.xml                  # mapper映射文件
+
+logging:
+  level:
+    com.baomidou.mybatisplus.core.mapper: debug
+#    root: debug
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+

@@ -60,6 +60,24 @@ logging:
 
 mybatis-plus:
   configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   # 开启sql日志
 
+# 指标监控
+management:
+  endpoints:
+    enabled-by-default: false  # 关闭所有端点
+    web:
+      exposure:
+        include: '*'  # 暴露所有端点
+
+  endpoint:   # 手动暴露端点
+    health:
+      show-details: always
+      enabled: true
+    info:
+      enabled: true
+    metrics:
+      enabled: true
+    beans:
+      enabled: true
 

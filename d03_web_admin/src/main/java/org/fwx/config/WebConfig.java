@@ -34,12 +34,12 @@ public class WebConfig implements WebMvcConfigurer {
         // 添加LoginInterceptor拦截器，拦截所有请求，但排除登录页面和静态资源请求
         registry.addInterceptor(new LoginInterceptor())
                 .addPathPatterns("/**") // 指定拦截所有路径
-                .excludePathPatterns("/","/login","/css/**","/js/**","/images/**","/fonts/**","/favicon.ico","/error/**","/druid/**"); // 排除不需要拦截的路径
+                .excludePathPatterns("/","/login","/css/**","/js/**","/images/**","/fonts/**","/favicon.ico","/error/**","/druid/**","/actuator/**"); // 排除不需要拦截的路径
 
         // 添加
         registry.addInterceptor(urlCountInterceptor)
                 .addPathPatterns("/**")
-                .excludePathPatterns("/","/login","/css/**","/js/**","/images/**","/fonts/**","/favicon.ico","/error/**","/druid/**");
+                .excludePathPatterns("/","/login","/css/**","/js/**","/images/**","/fonts/**","/favicon.ico","/error/**","/druid/**","/actuator/**");
     }
 
     @Bean

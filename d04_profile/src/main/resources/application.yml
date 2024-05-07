@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: prod  # 默认激活的profile
+    group:        # profile组合
+      prod:
+        - prod
+        - prod1
+      test:
+        - test
+
+server:
+  port: 8080
+
+person:
+  name: oringin

@@ -1,0 +1,6 @@
+person:
+  name: fwx-test
+  age: 20
+
+server:
+  port: 8082

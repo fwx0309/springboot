@@ -51,7 +51,7 @@
     yml日志配置
 
 9、整合redis
-    统计uri数量小功能
+    统计uri数量小功能：org.fwx.interceptor.UrlCountInterceptor
 
 10、JUnit5
     ● @Test :表示方法是测试方法。但是与JUnit4的@Test不同，他的职责非常单一不能声明任何属性，拓展的测试将会由Jupiter提供额外测试
